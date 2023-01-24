@@ -37,9 +37,9 @@ jobs:
       - name: Zip bundle
         run: |
             cd function
-            zip -r ../${{ env.GITHUB_SHA }}.zip .
+            zip -r ${{ env.GITHUB_SHA }}.zip .
       - name: Archive artifact
         uses: actions/upload-artifact@v2
         with:
           name: "zipped-bundle"
-          path: ../${{ env.GITHUB_SHA }}.zip
+          path: function/${{ env.GITHUB_SHA }}.zip
