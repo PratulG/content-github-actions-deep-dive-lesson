@@ -32,14 +32,4 @@ jobs:
       - name: Install libraries
         run: |
             cd function
-            python -m pip install --upgrade pip
-            if [ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi 
-      - name: Zip bundle
-        run: |
-            cd function
-            zip -r ${{ env.GITHUB_SHA }}.zip .
-      - name: Archive artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: "zipped-bundle"
-          path: function/${{ env.GITHUB_SHA }}.zip
+            python
